@@ -1,6 +1,4 @@
 import React, { FC } from 'react';
-import { Disclosure } from '@headlessui/react';
-import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
 import { Path, Tag } from '../types/apiDefinition';
 import { AccordionElement } from '../../../../components/organisms/AccordionElement';
 import { groupPathsByTag } from './ApiDefinitionPaths.utils';
