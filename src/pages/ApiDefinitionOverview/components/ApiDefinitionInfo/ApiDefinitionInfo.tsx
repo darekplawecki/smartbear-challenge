@@ -1,0 +1,38 @@
+import React, { FC } from 'react';
+import { Headline } from '../../../../components/atoms/Headline';
+import { Paragraph } from '../../../../components/atoms/Paragraph';
+import { Link } from '../../../../components/atoms/Link';
+import { Badge } from '../../../../components/atoms/Badge';
+import { Info } from '../types/apiDefinition';
+
+type ApiDefinitionInfoProps = {
+  info: Info;
+};
+
+const ApiDefinitionInfo: FC<ApiDefinitionInfoProps> = ({ info }) => {
+  return (
+    <div className="py-5">
+      <Headline size="2xl" className="flex items-center">
+        {info.title}
+        <Badge size="sm" label={info.version} className="ml-2" />
+      </Headline>
+      <div>
+        <span className="text-sm">[ Base URL: {info.baseUrl} ]</span>
+      </div>
+      <Paragraph className="mt-5">{info.description}</Paragraph>
+      <div className="mt-5">
+        <Link href={info.termsOfService} className="block">
+          Terms of service
+        </Link>
+        <Link href={`mailto:${info.contact.email}`} className="block">
+          Contact the developer
+        </Link>
+        <Link href={info.license.url} className="block">
+          {info.license.name}
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default ApiDefinitionInfo;

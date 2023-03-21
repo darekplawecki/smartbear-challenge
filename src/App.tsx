@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { ApiDefinitionOverview } from './pages/ApiDefinitionOverview';
+import { Headline } from './components/atoms/Headline';
 
-function App() {
-  return <h1 className="text-3xl font-bold">SmartBear Code Challenge</h1>;
-}
+const App: FC = () => {
+  return (
+    <div className="bg-gray-100">
+      <div className="min-h-full">
+        <header className="bg-white shadow">
+          <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+            <Headline size="3xl">SmartBear Code Challenge</Headline>
+          </div>
+        </header>
+        <main>
+          <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+            <ApiDefinitionOverview />
+          </div>
+        </main>
+      </div>
+    </div>
+  );
+};
 
 export default App;
