@@ -36,6 +36,7 @@ export const buildPathModel = (path?: Partial<PathModel>): PathModel => ({
   description: '',
   produces: ['application/json'],
   summary: 'Add a new pet to the store',
+  operationId: 'addPet',
   parameters: [buildParameterModel()],
   tags: ['pet'],
   responses: {
@@ -70,14 +71,14 @@ export const buildInfoModel = (info?: Partial<InfoModel>): InfoModel => ({
 });
 
 export const buildApiDefinitionModel = (
-  apiDefinition: Partial<ApiDefinitionModel>,
+  apiDefinition?: Partial<ApiDefinitionModel>,
 ): ApiDefinitionModel => ({
   host: 'petstore.swagger.io',
   basePath: '/v2',
   paths: {
     '/pet': {
       post: buildPathModel(),
-    }
+    },
   },
   tags: [buildTagModel()],
   info: buildInfoModel(),

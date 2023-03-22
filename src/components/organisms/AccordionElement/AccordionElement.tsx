@@ -3,7 +3,7 @@ import { Disclosure } from '@headlessui/react';
 import { AccordionElementHeader } from '../../molecules/AccordionElementHeader';
 import { AccordionElementContent } from '../../molecules/AccordionElementContent';
 
-type AccordionElementProps = {
+export type AccordionElementProps = {
   headline: string;
   description?: string;
   defaultOpen?: boolean;

@@ -33,6 +33,7 @@ export const buildPath = (path?: Partial<Path>): Path => ({
   name: '/pet',
   method: 'post',
   description: '',
+  operationId: 'addPet',
   produces: ['application/json'],
   summary: 'Add a new pet to the store',
   parameters: [buildParameter()],
@@ -64,7 +65,7 @@ export const buildInfo = (info?: Partial<Info>): Info => ({
 });
 
 export const buildApiDefinition = (
-  apiDefinition: Partial<ApiDefinition>,
+  apiDefinition?: Partial<ApiDefinition>,
 ): ApiDefinition => ({
   paths: [buildPath()],
   tags: [buildTag()],

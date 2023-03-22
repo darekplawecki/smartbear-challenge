@@ -13,6 +13,7 @@ const ResponsesDescriptionList: FC<ResponsesDescriptionListProps> = ({
   className,
 }) => {
   const items: DescriptionListItem[] = responses.map((response) => ({
+    key: response.code,
     name: response.code,
     description: response.description,
   }));

@@ -40,7 +40,7 @@ const colors: Record<Method | 'default', Color> = {
   },
 };
 
-type PathAccordionElementProps = {
+export type PathAccordionElementProps = {
   path: Path;
 };
 

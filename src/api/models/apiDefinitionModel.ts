@@ -18,6 +18,7 @@ export type ParameterModel = {
 export type PathModel = {
   tags: string[];
   description: string;
+  operationId: string;
   summary: string;
   produces: string[];
   parameters: ParameterModel[];

@@ -15,7 +15,7 @@ describe('get', () => {
     const responseData = { test: 'data' };
     fetchMock.mockResolvedValueOnce({
       ok: true,
-      json: () => Promise.resolve({ data: responseData }),
+      json: () => Promise.resolve(responseData),
     });
 
     // when

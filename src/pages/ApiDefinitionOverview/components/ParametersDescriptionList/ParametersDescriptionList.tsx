@@ -13,15 +13,16 @@ const ParametersDescriptionList: FC<ParametersDescriptionListProps> = ({
   className,
 }) => {
   const items: DescriptionListItem[] = parameters.map((parameter) => ({
+    key: parameter.name,
     name: (
       <>
-        <div>
+        <div data-testid="parameter-dl-name">
           {parameter.name}
           {parameter.required && (
             <span className="ml-1 font-light">(required)</span>
           )}
         </div>
-        <div className="text-xs text-gray-400">
+        <div className="text-xs text-gray-400" data-testid="parameter-dl-type">
           {parameter.type}
           {parameter.format && <span>({parameter.format})</span>}
         </div>

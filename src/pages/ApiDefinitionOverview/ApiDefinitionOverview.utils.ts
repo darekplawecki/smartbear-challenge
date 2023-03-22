@@ -16,6 +16,7 @@ const mapPaths = (pathsModel: PathsModel): Path[] => {
         name: pathName,
         method: method as Method,
         description: path.description,
+        operationId: path.operationId,
         tags: path.tags,
         produces: path.produces,
         summary: path.summary,

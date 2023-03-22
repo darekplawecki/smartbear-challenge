@@ -24,7 +24,7 @@ const ApiDefinitionPaths: FC<ApiDefinitionPathsProps> = ({ paths, tags }) => {
           >
             {paths.map((path) => (
               <PathAccordionElement
-                key={`${path.method}_${path.name}`}
+                key={`${path.operationId}_${path.name}`}
                 path={path}
               />
             ))}

@@ -25,6 +25,7 @@ const DescriptionList: FC<DescriptionListProps> = ({
       <dl>
         {items.map((item, index) => (
           <div
+            key={item.key}
             className={`${
               index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
             } px-6 py-4 sm:grid sm:grid-cols-3 sm:gap-4`}

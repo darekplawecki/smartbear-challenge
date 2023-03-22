@@ -19,6 +19,7 @@ export type Path = {
   method: Method;
   tags: string[];
   summary: string;
+  operationId: string;
   description: string;
   produces: string[];
   parameters: Parameter[];
