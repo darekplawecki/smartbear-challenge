@@ -13,21 +13,21 @@ const PathDetails: FC<PathDetailsProps> = ({ path }) => {
       {path.description && (
         <h3 className="text-base text-gray-900">{path.description}</h3>
       )}
-      {path.parameters.length > 0 && (
-        <>
-          <h3 className="text-base font-semibold leading-6 text-gray-900">
-            Parameters
-          </h3>
-          <ParametersDescriptionList parameters={path.parameters} />
-        </>
+      <h3 className="text-base font-semibold leading-6 text-gray-900">
+        Parameters
+      </h3>
+      {path.parameters.length > 0 ? (
+        <ParametersDescriptionList parameters={path.parameters} />
+      ) : (
+        <div>No parameters</div>
       )}
-      {path.responses.length > 0 && (
-        <>
-          <h3 className="text-base font-semibold leading-6 text-gray-900">
-            Responses
-          </h3>
-          <ResponsesDescriptionList responses={path.responses} />
-        </>
+      <h3 className="text-base font-semibold leading-6 text-gray-900">
+        Responses
+      </h3>
+      {path.responses.length > 0 ? (
+        <ResponsesDescriptionList responses={path.responses} />
+      ) : (
+        <div>No responses</div>
       )}
     </>
   );

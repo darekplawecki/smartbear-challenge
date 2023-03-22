@@ -51,7 +51,7 @@ describe('When rendering', () => {
     render(<PathDetails path={path} />);
 
     // then
-    expect(screen.queryByText('Responses')).not.toBeInTheDocument();
+    expect(screen.getByText('No responses')).toBeInTheDocument();
     expect(
       screen.queryByText('ResponsesDescriptionListMock'),
     ).not.toBeInTheDocument();
@@ -67,7 +67,7 @@ describe('When rendering', () => {
     render(<PathDetails path={path} />);
 
     // then
-    expect(screen.queryByText('Parameters')).not.toBeInTheDocument();
+    expect(screen.getByText('No parameters')).toBeInTheDocument();
     expect(
       screen.queryByText('ParametersDescriptionListMock'),
     ).not.toBeInTheDocument();
