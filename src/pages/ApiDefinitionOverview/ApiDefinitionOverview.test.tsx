@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { ApiDefinitionOverview } from './index';
 import { getApiDefinition } from '../../api/apiDefinition/apiDefinitionClient';
-import { buildApiDefinitionModel } from '../../api/__test__/apiDefinitionModelBuilder';
+import { buildApiDefinitionModel } from '../../api/apiDefinition/__test__/apiDefinitionModelBuilder';
 
 jest.mock('./components/ApiDefinitionInfo/ApiDefinitionInfo', () => () => (
   <div>ApiDefinitionInfoMock</div>

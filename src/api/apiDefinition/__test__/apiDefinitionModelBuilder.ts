@@ -7,7 +7,7 @@ import {
   PathModel,
   ResponseModel,
   TagModel,
-} from '../models/apiDefinitionModel';
+} from '../apiDefinitionModel';
 
 export const buildTagModel = (tag?: Partial<TagModel>): TagModel => ({
   name: 'pet',

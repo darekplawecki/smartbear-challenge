@@ -1,4 +1,4 @@
-import { buildApiDefinitionModel } from '../../api/__test__/apiDefinitionModelBuilder';
+import { buildApiDefinitionModel } from '../../api/apiDefinition/__test__/apiDefinitionModelBuilder';
 import { mapApiDefinition } from './ApiDefinitionOverview.utils';
 import { buildApiDefinition } from './__test__/apiDefinitionBuilder';
 

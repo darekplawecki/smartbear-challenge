@@ -1,4 +1,4 @@
-import { ApiDefinitionModel } from '../models/apiDefinitionModel';
+import { ApiDefinitionModel } from './apiDefinitionModel';
 import { get } from '../apiClient';
 
 const API_DEFINITION_URL = 'https://petstore.swagger.io/v2/swagger.json';

@@ -1,7 +1,7 @@
 import {
   ApiDefinitionModel,
   PathsModel,
-} from '../../api/models/apiDefinitionModel';
+} from '../../api/apiDefinition/apiDefinitionModel';
 import {
   ApiDefinition,
   Method,
