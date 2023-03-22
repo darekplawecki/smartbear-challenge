@@ -31,13 +31,13 @@ const ApiDefinitionOverview: FC = () => {
   }
 
   return (
-    <div>
+    <>
       <ApiDefinitionInfo info={apiDefinition.info} />
       <ApiDefinitionPaths
         paths={apiDefinition.paths}
         tags={apiDefinition.tags}
       />
-    </div>
+    </>
   );
 };
 

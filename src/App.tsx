@@ -8,7 +8,9 @@ const App: FC = () => {
       <div className="min-h-full">
         <header className="bg-white shadow">
           <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
-            <Headline size="3xl">SmartBear Code Challenge</Headline>
+            <Headline size="3xl" className="px-4">
+              SmartBear Code Challenge
+            </Headline>
           </div>
         </header>
         <main>

@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Path, Tag } from '../types/apiDefinition';
 import { AccordionElement } from '../../../../components/organisms/AccordionElement';
 import { groupPathsByTag } from './ApiDefinitionPaths.utils';
+import { PathAccordionElement } from '../PathAccordionElement';
 
 type ApiDefinitionPathsProps = {
   paths: Path[];
@@ -12,7 +13,7 @@ const ApiDefinitionPaths: FC<ApiDefinitionPathsProps> = ({ paths, tags }) => {
   const groupedPaths = groupPathsByTag(paths);
   return (
     <div>
-      {Object.keys(groupedPaths).map((tagName) => {
+      {Object.entries(groupedPaths).map(([tagName, paths]) => {
         const tag = tags.find((tag) => tag.name === tagName);
         return (
           <AccordionElement
@@ -21,7 +22,12 @@ const ApiDefinitionPaths: FC<ApiDefinitionPathsProps> = ({ paths, tags }) => {
             description={tag?.description}
             defaultOpen
           >
-            Panel
+            {paths.map((path) => (
+              <PathAccordionElement
+                key={`${path.method}_${path.name}`}
+                path={path}
+              />
+            ))}
           </AccordionElement>
         );
       })}

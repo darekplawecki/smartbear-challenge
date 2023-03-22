@@ -8,15 +8,18 @@ export type Parameter = {
   in: string;
   description: string;
   required: boolean;
-  type: string;
+  type?: string;
   format?: string;
 };
 
+export type Method = 'post' | 'get' | 'put' | 'delete';
+
 export type Path = {
   name: string;
-  method: string;
+  method: Method;
   tags: string[];
   summary: string;
+  description: string;
   produces: string[];
   parameters: Parameter[];
   responses: Response[];
@@ -27,7 +30,7 @@ export type Tag = {
   description: string;
 };
 
-export type Licence = {
+export type License = {
   name: string;
   url: string;
 };
@@ -43,7 +46,7 @@ export type Info = {
   title: string;
   termsOfService: string;
   contact: Contact;
-  license: Licence;
+  license: License;
 };
 
 export type ApiDefinition = {

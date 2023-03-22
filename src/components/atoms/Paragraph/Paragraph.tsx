@@ -1,5 +1,6 @@
 import React, { FC, PropsWithChildren } from 'react';
 import { FontSize } from '../../../types/style';
+import { textSizeClasses } from '../../../constants/style';
 
 type ParagraphProps = {
   size?: FontSize;
@@ -12,7 +13,9 @@ const Paragraph: FC<PropsWithChildren<ParagraphProps>> = ({
   className = '',
 }) => {
   return (
-    <h1 className={`text-${size} text-gray-900 ${className}`}>{children}</h1>
+    <h1 className={`${textSizeClasses[size]} text-gray-900 ${className}`}>
+      {children}
+    </h1>
   );
 };
 

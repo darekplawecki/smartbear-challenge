@@ -4,6 +4,7 @@ import {
 } from '../../api/models/apiDefinitionModel';
 import {
   ApiDefinition,
+  Method,
   Path,
   Response,
 } from './components/types/apiDefinition';
@@ -13,11 +14,12 @@ const mapPaths = (pathsModel: PathsModel): Path[] => {
     result.push(
       ...Object.entries(pathsModel[pathName]).map<Path>(([method, path]) => ({
         name: pathName,
-        method,
+        method: method as Method,
+        description: path.description,
         tags: path.tags,
         produces: path.produces,
         summary: path.summary,
-        parameters: { ...path.parameters },
+        parameters: [...path.parameters],
         responses: Object.entries(path.responses).map<Response>(
           ([code, response]) => ({
             code,
@@ -37,7 +39,6 @@ export const mapApiDefinition = (
   return {
     info: {
       ...info,
-
       baseUrl: `${host}${basePath}`,
     },
     tags,

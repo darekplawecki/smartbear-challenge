@@ -11,10 +11,10 @@ type ApiDefinitionInfoProps = {
 
 const ApiDefinitionInfo: FC<ApiDefinitionInfoProps> = ({ info }) => {
   return (
-    <div className="py-5">
+    <div className="px-4 py-6">
       <Headline size="2xl" className="flex items-center">
         {info.title}
-        <Badge size="sm" label={info.version} className="ml-2" />
+        <Badge size="sm" label={info.version} className="ml-2 bg-gray-600" />
       </Headline>
       <div>
         <span className="text-sm">[ Base URL: {info.baseUrl} ]</span>

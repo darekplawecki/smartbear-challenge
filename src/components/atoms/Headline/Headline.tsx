@@ -1,5 +1,6 @@
 import React, { FC, PropsWithChildren } from 'react';
 import { FontSize } from '../../../types/style';
+import { textSizeClasses } from '../../../constants/style';
 
 type HeadlineProps = {
   size?: FontSize;
@@ -13,7 +14,7 @@ const Headline: FC<PropsWithChildren<HeadlineProps>> = ({
 }) => {
   return (
     <h1
-      className={`text-${size} font-bold tracking-tight text-gray-900 ${className}`}
+      className={`${textSizeClasses[size]} font-bold tracking-tight text-gray-900 ${className}`}
     >
       {children}
     </h1>

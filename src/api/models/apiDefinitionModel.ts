@@ -11,12 +11,13 @@ export type ParameterModel = {
   in: string;
   description: string;
   required: boolean;
-  type: string;
+  type?: string;
   format?: string;
 };
 
 export type PathModel = {
   tags: string[];
+  description: string;
   summary: string;
   produces: string[];
   parameters: ParameterModel[];
@@ -34,7 +35,7 @@ export type TagModel = {
   description: string;
 };
 
-export type LicenceModel = {
+export type LicenseModel = {
   name: string;
   url: string;
 };
@@ -49,7 +50,7 @@ export type InfoModel = {
   title: string;
   termsOfService: string;
   contact: ContactModel;
-  license: LicenceModel;
+  license: LicenseModel;
 };
 
 export type ApiDefinitionModel = {

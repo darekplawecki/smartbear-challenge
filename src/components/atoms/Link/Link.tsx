@@ -1,5 +1,6 @@
 import React, { FC, PropsWithChildren } from 'react';
 import { FontSize } from '../../../types/style';
+import { textSizeClasses } from '../../../constants/style';
 
 type LinkProps = {
   href: string;
@@ -16,7 +17,7 @@ const Link: FC<PropsWithChildren<LinkProps>> = ({
   return (
     <a
       href={href}
-      className={`text-${size} font-medium text-indigo-600 hover:text-indigo-500 ${className}`}
+      className={`${textSizeClasses[size]} font-medium text-indigo-600 hover:text-indigo-500 ${className}`}
     >
       {children}
     </a>
