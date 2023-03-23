@@ -1,46 +1,114 @@
-# Getting Started with Create React App
+# SmartBear - Simple app for recruitment process
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a very simple app that retrieves and presents api definition. The app was implemented as a technical task
+for recruitment process in SmartBear. The project is bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Please read the information below, especially the section "Additional notes".
 
-In the project directory, you can run:
+## Setup
 
-### `yarn start`
+### Install
 
+For development, you need [NodeJS](https://nodejs.org/) and [Yarn](https://yarnpkg.com/) installed on your environment. It is recommended to
+install NodeJS using [Node Version Manager](https://github.com/nvm-sh/nvm).
+
+Once NodeJS is installed, run the following command:
+
+```sh
+yarn
+```
+
+### Start
+
+```sh
+yarn start
+```
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
+### Tests
 
+```sh
+yarn test
+```
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+### Lint
+
+```sh
+yarn lint
+```
+Runs static code analysis using ESLint.
+
+### Build for production
+
+```sh
+yarn build
+```
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Folder structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+src
+ ┣━ api
+ ┣━ assets
+ ┣━ components
+ ┃   ┣━ atoms
+ ┃   ┃   ┗━ {ComponentName}
+ ┃   ┃       ┣━ {ComponentName}.tsx
+ ┃   ┃       ┣━ {ComponentName}.test.tsx
+ ┃   ┃       ┣━ {ComponentName}.utils.ts
+ ┃   ┃       ┣━ {ComponentName}.utils.test.ts
+ ┃   ┃       ┗━ index.ts
+ ┃   ┣━ molecules
+ ┃   ┣━ organisms
+ ┃   ┗━ templates
+ ┣━ hooks
+ ┣━ pages
+ ┃   ┗━ {PageComponentName}
+ ┃       ┣━ components
+ ┃       ┣━ types
+ ┃       ┣━ utils
+ ┃       ┣━ {PageComponentName}.tsx
+ ┃       ┣━ {PageComponentName}.test.tsx
+ ┃       ┗━ index.ts
+ ┣━ types
+ ┗━ utils
+```
 
-### `yarn eject`
+- `api` is where api clients, models, graphql queries/mutations etc. should be placed,
+- `assets` contains all images, svg, icons etc.,
+- `components` are shared components grouped with atomic design pattern. Each component has its own folder. Inside
+  the component folder, all the files related to this component should be kept (styles, tests, utils) as well as a
+  single root file index.ts,
+- `hooks` contains reusable React hooks,
+- `pages` is where page components are kept with all their specific files (nested components, types, utils) grouped in
+  corresponding folders,
+- `types` contains reusable types and interfaces,
+- `utils` are helpful functions.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+All the mock files should be placed on any level in the `__mock__` folder and all the test builders or test
+helpers - on any level in the `__test__` folder.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Naming conventions
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Type, class and component names are written in `CamelCase`, starting with capital letter.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Constant names are written in `UPPER_CASE`.
 
-## Learn More
+For other variables and other typescript files, `camelCase` is used.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Additonal notes
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Instead of rendering path details on a separate page, I've chosen the solution with collapsible 
+component (just like in real swagger). Hope it's okay! 
+- Not all the components/files have been covered with unit tests. I've implemented a few tests just to give a brief 
+idea of how is my test approach. All the other components still need to be tested.
+- Unfortunately I didn't manage to render the models section.
