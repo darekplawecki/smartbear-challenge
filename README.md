@@ -1,9 +1,7 @@
-# SmartBear - Simple app for recruitment process
+# Swagger
 
 This is a very simple app that retrieves and presents api definition. The app was implemented as a technical task
-for recruitment process in SmartBear. The project is bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-Please read the information below, especially the section "Additional notes".
+for recruitment process. The project is bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Setup
 
@@ -104,11 +102,3 @@ Type, class and component names are written in `CamelCase`, starting with capita
 Constant names are written in `UPPER_CASE`.
 
 For other variables and other typescript files, `camelCase` is used.
-
-## Additonal notes
-
-- Instead of rendering path details on a separate page, I've chosen the solution with collapsible 
-component (just like in real swagger). Hope it's okay! 
-- Not all the components/files have been covered with unit tests. I've implemented a few tests just to give a brief 
-idea of how is my test approach. All the other components still need to be tested.
-- Unfortunately I didn't manage to render the models section.
